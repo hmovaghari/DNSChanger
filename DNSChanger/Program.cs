@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
+using System.IO;
 
 namespace DNSChanger
 {
@@ -11,9 +13,34 @@ namespace DNSChanger
         [STAThread]
         static void Main()
         {
+            CreateDNSXMLFile();
+            RunApplication();
+        }
+
+        /// <summary>
+        /// If DNS.XML does not exist crate it automatically.
+        /// </summary>
+        private static void CreateDNSXMLFile()
+        {
+            if (!DNS.IsExistsXMLFile())
+            {
+                string error;
+                DNS.CreateDefaultDNSFile(out error);
+                if (DNSChangerForm.IsErrorOccurred(error))
+                {
+                    Environment.Exit(0);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Run Application
+        /// </summary>
+        private static void RunApplication()
+        {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new DNSChangerForm());
         }
     }
 }

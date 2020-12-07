@@ -10,11 +10,19 @@ using System.Windows.Forms;
 
 namespace DNSChanger
 {
-    public partial class Form1 : Form
+    public partial class LoadingForm : Form
     {
-        public Form1()
+        public LoadingForm()
         {
             InitializeComponent();
+        }
+
+        private void LoadingForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                Close();
+            }
         }
     }
 }
