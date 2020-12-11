@@ -55,14 +55,11 @@ namespace DNSChanger
                 .DnsAddresses
                 .Select(a => a.ToString()).ToList();
 
-            dnsList.ForEach(
-                x =>
-                dnsName = dnsName == null && dnsOfAdapter.Count == 2
-                ?
-                dnsList.Where(d => d.Preferred == dnsOfAdapter[0] && d.Alternate == dnsOfAdapter[1]).Select(d => d.Name).ToList().First()
-                :
-                dnsName
-            );
+            if (dnsOfAdapter.Count == 2)
+            {
+                dnsName = dnsList.Where(d => d.Preferred == dnsOfAdapter[0] && d.Alternate == dnsOfAdapter[1])
+                    .Select(d => d.Name).ToList().FirstOrDefault();
+            }
 
             return string.Format(
                 "This adapter {0}connected to {1}.",
