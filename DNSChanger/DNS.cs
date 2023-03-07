@@ -39,8 +39,10 @@ namespace DNSChanger
         private static List<DNS> GetDefaultDNS()
         {
             List<DNS> dnsList = new List<DNS>();
+            dnsList.Add(new DNS { Name = "Loopback DNS", Preferred = "127.0.0.1", Alternate = "127.0.0.2" });
             dnsList.Add(new DNS { Name = "Google DNS", Preferred = "8.8.8.8", Alternate = "8.8.4.4" });
-            dnsList.Add(new DNS { Name = "Shecan DNS", Preferred = "185.51.200.2", Alternate = "178.22.122.100" });
+            dnsList.Add(new DNS { Name = "403.online", Preferred = "10.202.10.202", Alternate = "10.202.10.102" });
+            dnsList.Add(new DNS { Name = "Shecan DNS", Preferred = "178.22.122.100", Alternate = "185.51.200.2" });
             dnsList.Add(new DNS { Name = "Begzar DNS", Preferred = "185.55.226.26", Alternate = "185.55.225.25" });
             dnsList.Add(new DNS { Name = "Open DNS", Preferred = "208.67.222.222", Alternate = "208.67.220.220" });
             dnsList.Add(new DNS { Name = "Level3", Preferred = "209.244.0.3", Alternate = "209.244.0.4" });
