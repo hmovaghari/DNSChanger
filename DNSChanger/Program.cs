@@ -13,23 +13,20 @@ namespace DNSChanger
         [STAThread]
         static void Main()
         {
-            CreateDNSXMLFile();
+            CreateOrUpdateDNSXMLFile();
             RunApplication();
         }
 
         /// <summary>
         /// If DNS.XML does not exist crate it automatically.
         /// </summary>
-        private static void CreateDNSXMLFile()
+        private static void CreateOrUpdateDNSXMLFile()
         {
-            if (!DNS.IsExistsXMLFile())
+            string error;
+            DNS.CreateOrUpdateDefaultDNSFile(out error);
+            if (DNSChangerForm.IsErrorOccurred(error))
             {
-                string error;
-                DNS.CreateDefaultDNSFile(out error);
-                if (DNSChangerForm.IsErrorOccurred(error))
-                {
-                    Environment.Exit(0);
-                }
+                Environment.Exit(0);
             }
         }
 

@@ -181,17 +181,18 @@ namespace DNSChanger
         {
             //var comboBox = sender as ComboBox;
             var invalidText = new List<string>() { string.Empty, "DNSChanger.Adapter" };
+            var red = Color.MediumVioletRed;
             if (!invalidText.Contains(cmbAdapter.Text /*comboBox.Text*/))
             {
                 lblAdapter.Text = Adapter.GetDnsNameOfAdapter(adapterList, dnsList, cmbAdapter.Text /*comboBox.Text*/);
-                lblAdapter.ForeColor = lblAdapter.Text.StartsWith("This adapter not connected") ? Color.Red : Color.DarkGreen;
+                lblAdapter.ForeColor = lblAdapter.Text.StartsWith("This adapter not connected") ? red : Color.LightSeaGreen;
                 btnChange.Enabled = true;
                 btnReset.Enabled = true;
             }
             else
             {
                 lblAdapter.Text = "Adapter name not selected.";
-                lblAdapter.ForeColor = Color.Red;
+                lblAdapter.ForeColor = red;
                 btnChange.Enabled = false;
                 btnReset.Enabled = false;
             }
@@ -381,7 +382,7 @@ namespace DNSChanger
                 Preferred = txtPreferred.Text,
                 Alternate = txtAlternate.Text
             };
-            DNS.WriteXML(dns, isAppend: true, out error);
+            DNS.WriteXML(dns, out error);
             if (IsErrorOccurred(error))
             {
                 return false;

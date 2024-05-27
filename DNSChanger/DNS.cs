@@ -26,10 +26,10 @@ namespace DNSChanger
         /// <summary>
         /// Create default DNS file
         /// </summary>
-        public static void CreateDefaultDNSFile(out string error)
+        public static void CreateOrUpdateDefaultDNSFile(out string error)
         {
             List<DNS> dnsList = GetDefaultDNS();
-            WriteXML(dnsList, isAppend: false, out error);
+            WriteXML(dnsList, out error);
         }
 
         /// <summary>
@@ -41,9 +41,13 @@ namespace DNSChanger
             List<DNS> dnsList = new List<DNS>();
             dnsList.Add(new DNS { Name = "Loopback DNS", Preferred = "127.0.0.1", Alternate = "127.0.0.2" });
             dnsList.Add(new DNS { Name = "Google DNS", Preferred = "8.8.8.8", Alternate = "8.8.4.4" });
-            dnsList.Add(new DNS { Name = "403.online", Preferred = "10.202.10.202", Alternate = "10.202.10.102" });
+            dnsList.Add(new DNS { Name = "403.Online DNS", Preferred = "10.202.10.202", Alternate = "10.202.10.102" });
+            dnsList.Add(new DNS { Name = "Radar.Game DNS", Preferred = "10.202.10.10", Alternate = "10.202.10.11" });
             dnsList.Add(new DNS { Name = "Shecan DNS", Preferred = "178.22.122.100", Alternate = "185.51.200.2" });
             dnsList.Add(new DNS { Name = "Begzar DNS", Preferred = "185.55.226.26", Alternate = "185.55.225.25" });
+            dnsList.Add(new DNS { Name = "Electro DNS", Preferred = "78.157.42.101", Alternate = "78.157.42.100" });
+            dnsList.Add(new DNS { Name = "Host Iran DNS", Preferred = "172.29.0.100", Alternate = "172.29.2.100" });
+            dnsList.Add(new DNS { Name = "Abr Barani DC DNS", Preferred = "172.16.1.100 ", Alternate = "172.16.2.100" });
             dnsList.Add(new DNS { Name = "Open DNS", Preferred = "208.67.222.222", Alternate = "208.67.220.220" });
             dnsList.Add(new DNS { Name = "Level3", Preferred = "209.244.0.3", Alternate = "209.244.0.4" });
             dnsList.Add(new DNS { Name = "Verisign", Preferred = "64.6.64.6", Alternate = "64.6.65.6" });
@@ -81,11 +85,11 @@ namespace DNSChanger
         /// </summary>
         /// <param name="dnsList">List of DNS value</param>
         /// <param name="isAppend">Is append data</param>
-        public static void WriteXML(List<DNS> dnsList, bool isAppend, out string error)
+        public static void WriteXML(List<DNS> dnsList, out string error)
         {
             try
             {
-                if (!isAppend || !IsExistsXMLFile())
+                if (!IsExistsXMLFile())
                 {
                     WriteNewXML(dnsList);
                 }
@@ -107,9 +111,9 @@ namespace DNSChanger
         /// </summary>
         /// <param name="dns">DNS value</param>
         /// <param name="isAppend">Is append data</param>
-        public static void WriteXML(DNS dns, bool isAppend, out string error)
+        public static void WriteXML(DNS dns, out string error)
         {
-            WriteXML(new List<DNS>() { dns }, isAppend, out error);
+            WriteXML(new List<DNS>() { dns }, out error);
         }
 
         /// <summary>
@@ -120,15 +124,24 @@ namespace DNSChanger
         {
             XDocument xDocument = XDocument.Load(Resources.XMLFileName);
             XElement root = xDocument.Element(Resources.TagDNS);
+
+            string errorString;
+            List<DNS> dnsFileList = new List<DNS>();
+            ReadXMLFile(dnsFileList, out errorString);
+
             foreach (var item in dnsList)
             {
                 IEnumerable<XElement> rows = root.Descendants(Resources.TagItem);
-                XElement firstRow = rows.Last(); //rows.First();
-                firstRow.AddAfterSelf(/*AddBeforeSelf(*/
-                    new XElement(Resources.TagItem,
-                    new XElement(Resources.TagName, item.Name),
-                    new XElement(Resources.TagPreferred, item.Preferred),
-                    new XElement(Resources.TagAlternate, item.Alternate)));
+                var isExists = dnsFileList.Any(x => x.Name == item.Name);
+                if (!isExists)
+                {
+                    XElement firstRow = rows.Last(); //rows.First();
+                    firstRow.AddAfterSelf(/*AddBeforeSelf(*/
+                        new XElement(Resources.TagItem,
+                        new XElement(Resources.TagName, item.Name),
+                        new XElement(Resources.TagPreferred, item.Preferred),
+                        new XElement(Resources.TagAlternate, item.Alternate)));
+                }
             }
             xDocument.Save(Resources.XMLFileName);
         }
