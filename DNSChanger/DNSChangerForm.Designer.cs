@@ -50,6 +50,8 @@
             this.dnsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.adapterBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Timer = new System.Windows.Forms.Timer(this.components);
+            this.btnDisableIPv6 = new System.Windows.Forms.Button();
+            this.btnEnableIPv6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dnsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adapterBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -106,7 +108,7 @@
             // 
             // btnChange
             // 
-            this.btnChange.Location = new System.Drawing.Point(11, 200);
+            this.btnChange.Location = new System.Drawing.Point(11, 231);
             this.btnChange.Name = "btnChange";
             this.btnChange.Size = new System.Drawing.Size(133, 23);
             this.btnChange.TabIndex = 7;
@@ -116,7 +118,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(11, 229);
+            this.btnAdd.Location = new System.Drawing.Point(11, 260);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(89, 23);
             this.btnAdd.TabIndex = 9;
@@ -126,7 +128,7 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(105, 229);
+            this.btnEdit.Location = new System.Drawing.Point(105, 260);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(88, 23);
             this.btnEdit.TabIndex = 10;
@@ -136,7 +138,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(197, 229);
+            this.btnDelete.Location = new System.Drawing.Point(197, 260);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(88, 23);
             this.btnDelete.TabIndex = 11;
@@ -146,7 +148,7 @@
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(150, 200);
+            this.btnReset.Location = new System.Drawing.Point(150, 231);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(134, 23);
             this.btnReset.TabIndex = 8;
@@ -156,7 +158,7 @@
             // 
             // btnAccept
             // 
-            this.btnAccept.Location = new System.Drawing.Point(12, 200);
+            this.btnAccept.Location = new System.Drawing.Point(12, 231);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(181, 53);
             this.btnAccept.TabIndex = 12;
@@ -166,7 +168,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(198, 200);
+            this.btnCancel.Location = new System.Drawing.Point(198, 231);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(86, 52);
             this.btnCancel.TabIndex = 13;
@@ -213,11 +215,33 @@
             // 
             this.Timer.Interval = 1;
             // 
+            // btnDisableIPv6
+            // 
+            this.btnDisableIPv6.Location = new System.Drawing.Point(151, 200);
+            this.btnDisableIPv6.Name = "btnDisableIPv6";
+            this.btnDisableIPv6.Size = new System.Drawing.Size(134, 23);
+            this.btnDisableIPv6.TabIndex = 17;
+            this.btnDisableIPv6.Text = "Disable IPv6";
+            this.btnDisableIPv6.UseVisualStyleBackColor = true;
+            this.btnDisableIPv6.Click += new System.EventHandler(this.btnDisableIPv6_Click);
+            // 
+            // btnEnableIPv6
+            // 
+            this.btnEnableIPv6.Location = new System.Drawing.Point(12, 200);
+            this.btnEnableIPv6.Name = "btnEnableIPv6";
+            this.btnEnableIPv6.Size = new System.Drawing.Size(134, 23);
+            this.btnEnableIPv6.TabIndex = 18;
+            this.btnEnableIPv6.Text = "Enable IPv6";
+            this.btnEnableIPv6.UseVisualStyleBackColor = true;
+            this.btnEnableIPv6.Click += new System.EventHandler(this.btnEnableIPv6_Click);
+            // 
             // DNSChangerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(292, 263);
+            this.ClientSize = new System.Drawing.Size(292, 291);
+            this.Controls.Add(this.btnEnableIPv6);
+            this.Controls.Add(this.btnDisableIPv6);
             this.Controls.Add(this.lblAdapter);
             this.Controls.Add(this.cmbAdapter);
             this.Controls.Add(this.label1);
@@ -271,5 +295,7 @@
         private System.Windows.Forms.Label lblAdapter;
         private System.Windows.Forms.BindingSource adapterBindingSource;
         private System.Windows.Forms.Timer Timer;
+        private System.Windows.Forms.Button btnDisableIPv6;
+        private System.Windows.Forms.Button btnEnableIPv6;
     }
 }

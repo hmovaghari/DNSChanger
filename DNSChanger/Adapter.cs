@@ -137,5 +137,15 @@ namespace DNSChanger
             process.Start();
             return tcs.Task;
         }
+
+        internal static void SetIpv6(string adaperName, bool Enabled)
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+            string format = "powershell -command {0}-NetAdapterBinding -Name \"{1}\" -ComponentID ms_tcpip6";
+            string str = Enabled ? "Enable" : "Disable";
+            stringBuilder.Append("/c ");
+            stringBuilder.Append(string.Format(format, (object)str, (object)adaperName));
+            Adapter.RunCommand(stringBuilder.ToString());
+        }
     }
 }

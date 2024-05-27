@@ -452,5 +452,29 @@ namespace DNSChanger
         {
             MessageBox.Show(error, "Error occurred!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+        private void btnEnableIPv6_Click(object sender, EventArgs e)
+        {
+            EnableOrDisableAdapterIPv6(isEnable: true);
+        }
+
+        private void btnDisableIPv6_Click(object sender, EventArgs e)
+        {
+            EnableOrDisableAdapterIPv6(isEnable: false);
+        }
+
+        private void EnableOrDisableAdapterIPv6(bool isEnable)
+        {
+            Thread thread = new Thread(new ThreadStart(this.LoadingFunction));
+            thread.Start();
+            this.position = this.adapterBindingSource.Position;
+            Adapter.SetIpv6(this.cmbAdapter.Text, isEnable);
+            SendKeys.SendWait("{Esc}");
+            thread.Abort();
+            this.ClearAdapterBinding();
+            this.AddAdapterBinding();
+            this.adapterBindingSource.Position = this.position;
+            this.cmbAdapter_SelectedIndexChanged((object)null, (EventArgs)null);
+        }
     }
 }
