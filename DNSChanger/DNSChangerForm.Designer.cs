@@ -217,7 +217,7 @@
             // 
             // btnDisableIPv6
             // 
-            this.btnDisableIPv6.Location = new System.Drawing.Point(151, 200);
+            this.btnDisableIPv6.Location = new System.Drawing.Point(151, 202);
             this.btnDisableIPv6.Name = "btnDisableIPv6";
             this.btnDisableIPv6.Size = new System.Drawing.Size(134, 23);
             this.btnDisableIPv6.TabIndex = 17;
@@ -227,7 +227,7 @@
             // 
             // btnEnableIPv6
             // 
-            this.btnEnableIPv6.Location = new System.Drawing.Point(12, 200);
+            this.btnEnableIPv6.Location = new System.Drawing.Point(12, 202);
             this.btnEnableIPv6.Name = "btnEnableIPv6";
             this.btnEnableIPv6.Size = new System.Drawing.Size(134, 23);
             this.btnEnableIPv6.TabIndex = 18;
