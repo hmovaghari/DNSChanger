@@ -137,7 +137,7 @@ namespace DNSChanger
         private void ReadXMLFile()
         {
             string error;
-            DNS.ReadXMLFile(dnsList, out error);
+            dnsList = DNS.ReadXMLFile(dnsList, out error);
             if (!string.IsNullOrEmpty(error))
             {
                 ShowError(error);
@@ -475,6 +475,11 @@ namespace DNSChanger
             this.AddAdapterBinding();
             this.adapterBindingSource.Position = this.position;
             this.cmbAdapter_SelectedIndexChanged((object)null, (EventArgs)null);
+        }
+
+        private void DNSChangerForm_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://hmovaghari.github.io/#contact:en");
         }
     }
 }

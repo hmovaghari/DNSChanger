@@ -52,14 +52,20 @@
             this.Timer = new System.Windows.Forms.Timer(this.components);
             this.btnDisableIPv6 = new System.Windows.Forms.Button();
             this.btnEnableIPv6 = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dnsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adapterBindingSource)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(8, 81);
+            this.label3.Location = new System.Drawing.Point(5, 82);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 13);
             this.label3.TabIndex = 0;
@@ -69,7 +75,7 @@
             // 
             this.cmbDNS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDNS.FormattingEnabled = true;
-            this.cmbDNS.Location = new System.Drawing.Point(92, 78);
+            this.cmbDNS.Location = new System.Drawing.Point(89, 79);
             this.cmbDNS.Name = "cmbDNS";
             this.cmbDNS.Size = new System.Drawing.Size(193, 21);
             this.cmbDNS.TabIndex = 1;
@@ -77,7 +83,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 121);
+            this.label4.Location = new System.Drawing.Point(5, 122);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 13);
             this.label4.TabIndex = 3;
@@ -85,7 +91,7 @@
             // 
             // txtPreferred
             // 
-            this.txtPreferred.Location = new System.Drawing.Point(92, 118);
+            this.txtPreferred.Location = new System.Drawing.Point(89, 119);
             this.txtPreferred.Name = "txtPreferred";
             this.txtPreferred.Size = new System.Drawing.Size(192, 20);
             this.txtPreferred.TabIndex = 4;
@@ -93,7 +99,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 161);
+            this.label5.Location = new System.Drawing.Point(5, 162);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 13);
             this.label5.TabIndex = 5;
@@ -101,14 +107,14 @@
             // 
             // txtAlternate
             // 
-            this.txtAlternate.Location = new System.Drawing.Point(92, 161);
+            this.txtAlternate.Location = new System.Drawing.Point(89, 162);
             this.txtAlternate.Name = "txtAlternate";
             this.txtAlternate.Size = new System.Drawing.Size(192, 20);
             this.txtAlternate.TabIndex = 6;
             // 
             // btnChange
             // 
-            this.btnChange.Location = new System.Drawing.Point(11, 231);
+            this.btnChange.Location = new System.Drawing.Point(7, 19);
             this.btnChange.Name = "btnChange";
             this.btnChange.Size = new System.Drawing.Size(133, 23);
             this.btnChange.TabIndex = 7;
@@ -118,7 +124,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(11, 260);
+            this.btnAdd.Location = new System.Drawing.Point(9, 19);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(89, 23);
             this.btnAdd.TabIndex = 9;
@@ -128,7 +134,7 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(105, 260);
+            this.btnEdit.Location = new System.Drawing.Point(103, 19);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(88, 23);
             this.btnEdit.TabIndex = 10;
@@ -138,7 +144,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(197, 260);
+            this.btnDelete.Location = new System.Drawing.Point(195, 19);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(88, 23);
             this.btnDelete.TabIndex = 11;
@@ -148,7 +154,7 @@
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(150, 231);
+            this.btnReset.Location = new System.Drawing.Point(147, 19);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(134, 23);
             this.btnReset.TabIndex = 8;
@@ -158,9 +164,9 @@
             // 
             // btnAccept
             // 
-            this.btnAccept.Location = new System.Drawing.Point(12, 231);
+            this.btnAccept.Location = new System.Drawing.Point(9, 19);
             this.btnAccept.Name = "btnAccept";
-            this.btnAccept.Size = new System.Drawing.Size(181, 53);
+            this.btnAccept.Size = new System.Drawing.Size(181, 23);
             this.btnAccept.TabIndex = 12;
             this.btnAccept.Text = "Accept";
             this.btnAccept.UseVisualStyleBackColor = true;
@@ -168,9 +174,9 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(198, 231);
+            this.btnCancel.Location = new System.Drawing.Point(196, 19);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(86, 52);
+            this.btnCancel.Size = new System.Drawing.Size(86, 23);
             this.btnCancel.TabIndex = 13;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -178,7 +184,7 @@
             // 
             // txtDNS
             // 
-            this.txtDNS.Location = new System.Drawing.Point(92, 79);
+            this.txtDNS.Location = new System.Drawing.Point(89, 80);
             this.txtDNS.Margin = new System.Windows.Forms.Padding(1);
             this.txtDNS.Name = "txtDNS";
             this.txtDNS.Size = new System.Drawing.Size(192, 20);
@@ -187,7 +193,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 15);
+            this.label1.Location = new System.Drawing.Point(6, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 13);
             this.label1.TabIndex = 14;
@@ -197,7 +203,7 @@
             // 
             this.cmbAdapter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAdapter.FormattingEnabled = true;
-            this.cmbAdapter.Location = new System.Drawing.Point(92, 15);
+            this.cmbAdapter.Location = new System.Drawing.Point(89, 16);
             this.cmbAdapter.Name = "cmbAdapter";
             this.cmbAdapter.Size = new System.Drawing.Size(193, 21);
             this.cmbAdapter.TabIndex = 15;
@@ -205,7 +211,7 @@
             // lblAdapter
             // 
             this.lblAdapter.AutoSize = true;
-            this.lblAdapter.Location = new System.Drawing.Point(9, 46);
+            this.lblAdapter.Location = new System.Drawing.Point(6, 47);
             this.lblAdapter.Name = "lblAdapter";
             this.lblAdapter.Size = new System.Drawing.Size(137, 13);
             this.lblAdapter.TabIndex = 16;
@@ -217,7 +223,7 @@
             // 
             // btnDisableIPv6
             // 
-            this.btnDisableIPv6.Location = new System.Drawing.Point(151, 202);
+            this.btnDisableIPv6.Location = new System.Drawing.Point(146, 48);
             this.btnDisableIPv6.Name = "btnDisableIPv6";
             this.btnDisableIPv6.Size = new System.Drawing.Size(134, 23);
             this.btnDisableIPv6.TabIndex = 17;
@@ -227,7 +233,7 @@
             // 
             // btnEnableIPv6
             // 
-            this.btnEnableIPv6.Location = new System.Drawing.Point(12, 202);
+            this.btnEnableIPv6.Location = new System.Drawing.Point(7, 48);
             this.btnEnableIPv6.Name = "btnEnableIPv6";
             this.btnEnableIPv6.Size = new System.Drawing.Size(134, 23);
             this.btnEnableIPv6.TabIndex = 18;
@@ -235,41 +241,76 @@
             this.btnEnableIPv6.UseVisualStyleBackColor = true;
             this.btnEnableIPv6.Click += new System.EventHandler(this.btnEnableIPv6_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnReset);
+            this.groupBox1.Controls.Add(this.btnEnableIPv6);
+            this.groupBox1.Controls.Add(this.btnChange);
+            this.groupBox1.Controls.Add(this.btnDisableIPv6);
+            this.groupBox1.Location = new System.Drawing.Point(6, 208);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(291, 75);
+            this.groupBox1.TabIndex = 19;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Change adapter settings";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnAdd);
+            this.groupBox2.Controls.Add(this.btnEdit);
+            this.groupBox2.Controls.Add(this.btnCancel);
+            this.groupBox2.Controls.Add(this.btnDelete);
+            this.groupBox2.Controls.Add(this.btnAccept);
+            this.groupBox2.Location = new System.Drawing.Point(5, 289);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(292, 48);
+            this.groupBox2.TabIndex = 20;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Change DNS list";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.lblAdapter);
+            this.groupBox3.Controls.Add(this.cmbDNS);
+            this.groupBox3.Controls.Add(this.cmbAdapter);
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.txtPreferred);
+            this.groupBox3.Controls.Add(this.txtDNS);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.txtAlternate);
+            this.groupBox3.Location = new System.Drawing.Point(6, 9);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(291, 196);
+            this.groupBox3.TabIndex = 21;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "DNS info";
+            // 
             // DNSChangerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(292, 291);
-            this.Controls.Add(this.btnEnableIPv6);
-            this.Controls.Add(this.btnDisableIPv6);
-            this.Controls.Add(this.lblAdapter);
-            this.Controls.Add(this.cmbAdapter);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtDNS);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnAccept);
-            this.Controls.Add(this.btnReset);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.btnChange);
-            this.Controls.Add(this.txtAlternate);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtPreferred);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.cmbDNS);
-            this.Controls.Add(this.label3);
+            this.ClientSize = new System.Drawing.Size(305, 346);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "DNSChangerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DNS Changer";
+            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.DNSChangerForm_HelpButtonClicked);
             ((System.ComponentModel.ISupportInitialize)(this.dnsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.adapterBindingSource)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -297,5 +338,8 @@
         private System.Windows.Forms.Timer Timer;
         private System.Windows.Forms.Button btnDisableIPv6;
         private System.Windows.Forms.Button btnEnableIPv6;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }

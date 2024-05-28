@@ -127,7 +127,7 @@ namespace DNSChanger
 
             string errorString;
             List<DNS> dnsFileList = new List<DNS>();
-            ReadXMLFile(dnsFileList, out errorString);
+            dnsList = ReadXMLFile(dnsFileList, out errorString);
 
             foreach (var item in dnsList)
             {
@@ -248,14 +248,14 @@ namespace DNSChanger
         /// Read DNS.XML
         /// </summary>
         /// <param name="dnsList">List of DNS value</param>
-        public static void ReadXMLFile(List<DNS> dnsList, out string errore)
+        public static List<DNS> ReadXMLFile(List<DNS> _dnsList, out string errore)
         {
             XElement.Load(@"DNS.XML")
                 .Elements("Item")
                 .ToList()
                 .ForEach
                 (
-                    x => dnsList.Add(
+                    x => _dnsList.Add(
                         new DNS
                         {
                             Name = x.Elements("Name").ToList()[0].Value,
@@ -265,7 +265,9 @@ namespace DNSChanger
                 )
             );
 
-            IsExistsDuplicateName(dnsList, out errore);
+            IsExistsDuplicateName(_dnsList, out errore);
+
+            return _dnsList.OrderBy(x => x.Name).ToList();
         }
 
         /// <summary>
