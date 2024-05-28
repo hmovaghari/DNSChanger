@@ -61,22 +61,22 @@ namespace DNSChanger
             dnsList.Add(new DNS { Name = "OpenNIC(1)", Preferred = "96.90.175.167", Alternate = "193.183.98.154" });
             dnsList.Add(new DNS { Name = "OpenNIC(2)", Preferred = "107.150.40.234", Alternate = "50.116.23.211" });
             dnsList.Add(new DNS { Name = "SmartViper", Preferred = "208.76.50.50", Alternate = "208.76.51.51" });
-            dnsList.Add(new DNS { Name = "Dyn", Preferred = "216.146.35.35", Alternate = "216.146.36.36" });
+            dnsList.Add(new DNS { Name = "Dyn DNS", Preferred = "216.146.35.35", Alternate = "216.146.36.36" });
             dnsList.Add(new DNS { Name = "FreeDNS(1)", Preferred = "37.235.1.174", Alternate = "37.235.1.117" });
             dnsList.Add(new DNS { Name = "FreeDNS(2)", Preferred = "37.235.1.174", Alternate = "37.235.1.177" });
             dnsList.Add(new DNS { Name = "Alternare DNS", Preferred = "198.101.242.72", Alternate = "23.253.163.53" });
             dnsList.Add(new DNS { Name = "Yandex.DNS", Preferred = "77.88.8.8", Alternate = "77.88.8.1" });
-            dnsList.Add(new DNS { Name = "censurfridns.dk", Preferred = "91.239.100.100", Alternate = "89.233.43.71" });
+            dnsList.Add(new DNS { Name = "censurfridns.dk DNS", Preferred = "91.239.100.100", Alternate = "89.233.43.71" });
             dnsList.Add(new DNS { Name = "Cloudflare DNS", Preferred = "1.1.1.1", Alternate = "1.0.0.1" });
-            dnsList.Add(new DNS { Name = "Quad9", Preferred = "9.9.9.9", Alternate = "149.112.112.112" });
-            dnsList.Add(new DNS { Name = "Quad101", Preferred = "101.101.101.101", Alternate = "101.102.103.104" });
-            dnsList.Add(new DNS { Name = "CleanBrowsing", Preferred = "185.228.168.9", Alternate = "185.228.169.9" });
-            dnsList.Add(new DNS { Name = "Keyweon", Preferred = "176.9.62.58", Alternate = "176.9.62.62" });
+            dnsList.Add(new DNS { Name = "Quad9 DNS", Preferred = "9.9.9.9", Alternate = "149.112.112.112" });
+            dnsList.Add(new DNS { Name = "Quad101 DNS", Preferred = "101.101.101.101", Alternate = "101.102.103.104" });
+            dnsList.Add(new DNS { Name = "CleanBrowsing DNS", Preferred = "185.228.168.9", Alternate = "185.228.169.9" });
+            dnsList.Add(new DNS { Name = "Keyweon DNS", Preferred = "176.9.62.58", Alternate = "176.9.62.62" });
             dnsList.Add(new DNS { Name = "Neustar DNS", Preferred = "156.154.70.5", Alternate = "156.154.71.5" });
-            dnsList.Add(new DNS { Name = "French Data Network", Preferred = "80.67.169.12", Alternate = "80.67.169.40" });
-            dnsList.Add(new DNS { Name = "Freenom Work", Preferred = "80.80.80.80", Alternate = "80.80.81.81" });
+            dnsList.Add(new DNS { Name = "French Data Network DNS", Preferred = "80.67.169.12", Alternate = "80.67.169.40" });
+            dnsList.Add(new DNS { Name = "Freenom Work DNS", Preferred = "80.80.80.80", Alternate = "80.80.81.81" });
             dnsList.Add(new DNS { Name = "UncensoredDNS", Preferred = "91.239.100.100", Alternate = "89.233.43.71" });
-            dnsList.Add(new DNS { Name = "AdGuard", Preferred = "176.103.130.130", Alternate = "176.103.130.131" });
+            dnsList.Add(new DNS { Name = "AdGuard DNS", Preferred = "176.103.130.130", Alternate = "176.103.130.131" });
             return dnsList;
         }
 
