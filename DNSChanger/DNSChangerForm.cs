@@ -488,6 +488,12 @@ namespace DNSChanger
         private void DNSChangerForm_Load(object sender, EventArgs e)
         {
             CheckUpdate();
+            AddVersionInTitile();
+        }
+
+        private void AddVersionInTitile()
+        {
+            Text += $" {Resources.Version}";
         }
 
         private void CheckUpdate()

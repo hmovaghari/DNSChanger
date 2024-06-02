@@ -127,7 +127,7 @@ namespace DNSChanger
 
             string errorString;
             List<DNS> dnsFileList = new List<DNS>();
-            dnsList = ReadXMLFile(dnsFileList, out errorString);
+            ReadXMLFile(dnsFileList, out errorString);
 
             foreach (var item in dnsList)
             {
