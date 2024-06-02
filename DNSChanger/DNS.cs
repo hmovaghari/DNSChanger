@@ -250,17 +250,17 @@ namespace DNSChanger
         /// <param name="dnsList">List of DNS value</param>
         public static List<DNS> ReadXMLFile(List<DNS> _dnsList, out string errore)
         {
-            XElement.Load(@"DNS.XML")
-                .Elements("Item")
+            XElement.Load(Resources.XMLFileName)
+                .Elements(Resources.TagItem)
                 .ToList()
                 .ForEach
                 (
                     x => _dnsList.Add(
                         new DNS
                         {
-                            Name = x.Elements("Name").ToList()[0].Value,
-                            Preferred = x.Elements("Preferred").ToList()[0].Value,
-                            Alternate = x.Elements("Alternate").ToList()[0].Value
+                            Name = x.Elements(Resources.TagName).ToList()[0].Value,
+                            Preferred = x.Elements(Resources.TagPreferred).ToList()[0].Value,
+                            Alternate = x.Elements(Resources.TagAlternate).ToList()[0].Value
                         }
                 )
             );

@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Resources = DNSChanger.Properties.Resources;
+using DNSChanger.Properties;
 
 namespace DNSChanger
 {
@@ -86,11 +86,11 @@ namespace DNSChanger
         {
             dnsBindingSource.DataSource = dnsList;
             cmbDNS.DataSource = dnsBindingSource;
-            cmbDNS.DisplayMember = "Name";
-            cmbDNS.ValueMember = "Name";
-            txtDNS.DataBindings.Add("Text", dnsBindingSource, "Name");
-            txtPreferred.DataBindings.Add("Text", dnsBindingSource, "Preferred");
-            txtAlternate.DataBindings.Add("Text", dnsBindingSource, "Alternate");
+            cmbDNS.DisplayMember = Resources.TagName;
+            cmbDNS.ValueMember = Resources.TagName;
+            txtDNS.DataBindings.Add(Resources.TextProperties, dnsBindingSource, Resources.TagName);
+            txtPreferred.DataBindings.Add(Resources.TextProperties, dnsBindingSource, Resources.TagPreferred);
+            txtAlternate.DataBindings.Add(Resources.TextProperties, dnsBindingSource, Resources.TagAlternate);
         }
 
         /// <summary>
@@ -156,8 +156,8 @@ namespace DNSChanger
             Adapter.GetAdapters(adapterList);
             adapterBindingSource.DataSource = adapterList;
             cmbAdapter.DataSource = adapterBindingSource;
-            cmbAdapter.DisplayMember = "Name";
-            cmbAdapter.ValueMember = "Name";
+            cmbAdapter.DisplayMember = Resources.TagName;
+            cmbAdapter.ValueMember = Resources.TagName;
             cmbAdapter.SelectedIndexChanged += cmbAdapter_SelectedIndexChanged;
         }
 
@@ -183,18 +183,18 @@ namespace DNSChanger
         private void cmbAdapter_SelectedIndexChanged(object sender, EventArgs e)
         {
             //var comboBox = sender as ComboBox;
-            var invalidText = new List<string>() { string.Empty, "DNSChanger.Adapter" };
+            var invalidText = new List<string>() { string.Empty, Resources.DNSChanger_Adapter };
             var red = Color.MediumVioletRed;
             if (!invalidText.Contains(cmbAdapter.Text /*comboBox.Text*/))
             {
                 lblAdapter.Text = Adapter.GetDnsNameOfAdapter(adapterList, dnsList, cmbAdapter.Text /*comboBox.Text*/);
-                lblAdapter.ForeColor = lblAdapter.Text.StartsWith("This adapter not connected") ? red : Color.LightSeaGreen;
+                lblAdapter.ForeColor = lblAdapter.Text.StartsWith(Resources.ThisAdapterNotConnected) ? red : Color.LightSeaGreen;
                 btnChange.Enabled = true;
                 btnReset.Enabled = true;
             }
             else
             {
-                lblAdapter.Text = "Adapter name not selected.";
+                lblAdapter.Text = Resources.AdapterNameNotSelected;
                 lblAdapter.ForeColor = red;
                 btnChange.Enabled = false;
                 btnReset.Enabled = false;
@@ -247,7 +247,7 @@ namespace DNSChanger
             {
                 Adapter.ResetAdapterDNS(cmbAdapter.Text);
             }
-            SendKeys.SendWait("{Esc}");//Enter or Esc// Close loadingForm
+            SendKeys.SendWait(Resources.ESC);//Enter or Esc// Close loadingForm
             pleaseWaitThread.Abort();
             ClearAdapterBinding();
             AddAdapterBinding();
@@ -453,7 +453,7 @@ namespace DNSChanger
         /// <param name="error">Error variable</param>
         public static void ShowError(string error)
         {
-            MessageBox.Show(error, "Error occurred!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(error, Resources.ErrorOccurred, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void btnEnableIPv6_Click(object sender, EventArgs e)
@@ -472,7 +472,7 @@ namespace DNSChanger
             thread.Start();
             this.position = this.adapterBindingSource.Position;
             Adapter.SetIpv6(this.cmbAdapter.Text, isEnable);
-            SendKeys.SendWait("{Esc}");
+            SendKeys.SendWait(Resources.ESC);
             thread.Abort();
             this.ClearAdapterBinding();
             this.AddAdapterBinding();
@@ -482,7 +482,7 @@ namespace DNSChanger
 
         private void DNSChangerForm_HelpButtonClicked(object sender, CancelEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://hmovaghari.github.io/#contact:en");
+            Process.Start(Resources.SupportUrl);
         }
 
         private void DNSChangerForm_Load(object sender, EventArgs e)
@@ -492,20 +492,19 @@ namespace DNSChanger
 
         private void CheckUpdate()
         {
-            string UpdateUrl = "https://hmovaghari.github.io/root/DNSChanger/WindowsUpdate.txt";
             try
             {
                 using (WebClient client = new WebClient())
                 {
-                    var updateContents = client.DownloadString(UpdateUrl).Split('\n').ToList();
+                    var updateContents = client.DownloadString(Resources.UpdateUrl).Split('\n').ToList();
                     if (Resources.Version != updateContents[0])
                     {
                         var caption = Resources.GetNewUpdate;
                         var text = Resources.IsUpdate
-                            .Replace("{Resources.Version}", Resources.Version)
-                            .Replace("{UpdateVersion}", updateContents[0])
-                            .Replace(@"\n", "\n")
-                            .Replace(@"\t", "\t");
+                            .Replace(Resources.ResourcesVersion, Resources.Version)
+                            .Replace(Resources.UpdateVersion, updateContents[0])
+                            .Replace(Resources.EnterChar, "\n")
+                            .Replace(Resources.TabChar, "\t");
                         var isGetUpdate = MessageBox.Show(text, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes;
                         if (isGetUpdate)
                         {

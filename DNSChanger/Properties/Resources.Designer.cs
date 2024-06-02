@@ -61,11 +61,56 @@ namespace DNSChanger.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Adapter name not selected..
+        /// </summary>
+        internal static string AdapterNameNotSelected {
+            get {
+                return ResourceManager.GetString("AdapterNameNotSelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DNSChanger.Adapter.
+        /// </summary>
+        internal static string DNSChanger_Adapter {
+            get {
+                return ResourceManager.GetString("DNSChanger_Adapter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to In the DNS.XML file exists duplicate DNS name!.
         /// </summary>
         internal static string DuplicateInDNSFile {
             get {
                 return ResourceManager.GetString("DuplicateInDNSFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to \n.
+        /// </summary>
+        internal static string EnterChar {
+            get {
+                return ResourceManager.GetString("EnterChar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error occurred!.
+        /// </summary>
+        internal static string ErrorOccurred {
+            get {
+                return ResourceManager.GetString("ErrorOccurred", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {Esc}.
+        /// </summary>
+        internal static string ESC {
+            get {
+                return ResourceManager.GetString("ESC", resourceCulture);
             }
         }
         
@@ -126,6 +171,33 @@ namespace DNSChanger.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {Resources.Version}.
+        /// </summary>
+        internal static string ResourcesVersion {
+            get {
+                return ResourceManager.GetString("ResourcesVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://hmovaghari.github.io/#contact:en.
+        /// </summary>
+        internal static string SupportUrl {
+            get {
+                return ResourceManager.GetString("SupportUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to \t.
+        /// </summary>
+        internal static string TabChar {
+            get {
+                return ResourceManager.GetString("TabChar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Alternate.
         /// </summary>
         internal static string TagAlternate {
@@ -167,6 +239,42 @@ namespace DNSChanger.Properties {
         internal static string TagPreferred {
             get {
                 return ResourceManager.GetString("TagPreferred", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Text.
+        /// </summary>
+        internal static string TextProperties {
+            get {
+                return ResourceManager.GetString("TextProperties", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This adapter not connected.
+        /// </summary>
+        internal static string ThisAdapterNotConnected {
+            get {
+                return ResourceManager.GetString("ThisAdapterNotConnected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://hmovaghari.github.io/root/DNSChanger/WindowsUpdate.txt.
+        /// </summary>
+        internal static string UpdateUrl {
+            get {
+                return ResourceManager.GetString("UpdateUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {UpdateVersion}.
+        /// </summary>
+        internal static string UpdateVersion {
+            get {
+                return ResourceManager.GetString("UpdateVersion", resourceCulture);
             }
         }
         

@@ -117,8 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AdapterNameNotSelected" xml:space="preserve">
+    <value>Adapter name not selected.</value>
+  </data>
+  <data name="DNSChanger_Adapter" xml:space="preserve">
+    <value>DNSChanger.Adapter</value>
+  </data>
   <data name="DuplicateInDNSFile" xml:space="preserve">
     <value>In the DNS.XML file exists duplicate DNS name!</value>
+  </data>
+  <data name="EnterChar" xml:space="preserve">
+    <value>\n</value>
+  </data>
+  <data name="ErrorOccurred" xml:space="preserve">
+    <value>Error occurred!</value>
+  </data>
+  <data name="ESC" xml:space="preserve">
+    <value>{Esc}</value>
   </data>
   <data name="ExistsDuplicateDNS" xml:space="preserve">
     <value>The DNS name already exists, please change it and try again.</value>
@@ -139,6 +154,15 @@
   <data name="NodeNotFind" xml:space="preserve">
     <value>The DNS required for the update could not be found!</value>
   </data>
+  <data name="ResourcesVersion" xml:space="preserve">
+    <value>{Resources.Version}</value>
+  </data>
+  <data name="SupportUrl" xml:space="preserve">
+    <value>https://hmovaghari.github.io/#contact:en</value>
+  </data>
+  <data name="TabChar" xml:space="preserve">
+    <value>\t</value>
+  </data>
   <data name="TagAlternate" xml:space="preserve">
     <value>Alternate</value>
   </data>
@@ -153,6 +177,18 @@
   </data>
   <data name="TagPreferred" xml:space="preserve">
     <value>Preferred</value>
+  </data>
+  <data name="TextProperties" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="ThisAdapterNotConnected" xml:space="preserve">
+    <value>This adapter not connected</value>
+  </data>
+  <data name="UpdateUrl" xml:space="preserve">
+    <value>https://hmovaghari.github.io/root/DNSChanger/WindowsUpdate.txt</value>
+  </data>
+  <data name="UpdateVersion" xml:space="preserve">
+    <value>{UpdateVersion}</value>
   </data>
   <data name="Version" xml:space="preserve">
     <value>1.0.2</value>
