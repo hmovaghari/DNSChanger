@@ -19,7 +19,7 @@ namespace DNSChanger.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -89,6 +89,24 @@ namespace DNSChanger.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Get new update.
+        /// </summary>
+        internal static string GetNewUpdate {
+            get {
+                return ResourceManager.GetString("GetNewUpdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Current version\t{Resources.Version}\nUpdate version\t{UpdateVersion}\nShould the update be performed?.
+        /// </summary>
+        internal static string IsUpdate {
+            get {
+                return ResourceManager.GetString("IsUpdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Loading {
@@ -149,6 +167,15 @@ namespace DNSChanger.Properties {
         internal static string TagPreferred {
             get {
                 return ResourceManager.GetString("TagPreferred", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1.0.2.
+        /// </summary>
+        internal static string Version {
+            get {
+                return ResourceManager.GetString("Version", resourceCulture);
             }
         }
         

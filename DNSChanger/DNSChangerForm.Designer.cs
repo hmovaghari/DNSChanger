@@ -304,6 +304,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DNS Changer";
             this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.DNSChangerForm_HelpButtonClicked);
+            this.Load += new System.EventHandler(this.DNSChangerForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dnsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.adapterBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);

@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Resources = DNSChanger.Properties.Resources;
 
 namespace DNSChanger
 {
@@ -480,6 +483,38 @@ namespace DNSChanger
         private void DNSChangerForm_HelpButtonClicked(object sender, CancelEventArgs e)
         {
             System.Diagnostics.Process.Start("https://hmovaghari.github.io/#contact:en");
+        }
+
+        private void DNSChangerForm_Load(object sender, EventArgs e)
+        {
+            CheckUpdate();
+        }
+
+        private void CheckUpdate()
+        {
+            string UpdateUrl = "https://hmovaghari.github.io/root/DNSChanger/WindowsUpdate.txt";
+            try
+            {
+                using (WebClient client = new WebClient())
+                {
+                    var updateContents = client.DownloadString(UpdateUrl).Split('\n').ToList();
+                    if (Resources.Version != updateContents[0])
+                    {
+                        var caption = Resources.GetNewUpdate;
+                        var text = Resources.IsUpdate
+                            .Replace("{Resources.Version}", Resources.Version)
+                            .Replace("{UpdateVersion}", updateContents[0])
+                            .Replace(@"\n", "\n")
+                            .Replace(@"\t", "\t");
+                        var isGetUpdate = MessageBox.Show(text, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes;
+                        if (isGetUpdate)
+                        {
+                            Process.Start(updateContents[1]);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex) { }
         }
     }
 }
