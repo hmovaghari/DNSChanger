@@ -191,7 +191,7 @@
     <value>{UpdateVersion}</value>
   </data>
   <data name="Version" xml:space="preserve">
-    <value>1.0.2</value>
+    <value>1.0.3</value>
   </data>
   <data name="XMLFileName" xml:space="preserve">
     <value>DNS.XML</value>
