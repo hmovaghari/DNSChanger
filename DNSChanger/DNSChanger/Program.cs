@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
-using System.IO;
 
 namespace DNSChanger
 {
@@ -13,8 +11,20 @@ namespace DNSChanger
         [STAThread]
         static void Main()
         {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            CreateDNSPath();
             CreateOrUpdateDNSXMLFile();
             RunApplication();
+        }
+
+        public static void CreateDNSPath()
+        {
+            if (DNSPAthForm.IsOpenForm())
+            {
+                var frm = new DNSPAthForm();
+                frm.ShowDialog();
+            }
         }
 
         /// <summary>
@@ -35,8 +45,6 @@ namespace DNSChanger
         /// </summary>
         private static void RunApplication()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new DNSChangerForm());
         }
     }

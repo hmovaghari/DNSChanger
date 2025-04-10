@@ -1,16 +1,13 @@
-﻿using System;
+﻿using DNSChanger.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Net;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DNSChanger.Properties;
 
 namespace DNSChanger
 {
@@ -102,8 +99,8 @@ namespace DNSChanger
             {
                 dnsBindingSource.DataSource = null;
             }
-            catch{}
-            
+            catch { }
+
             cmbDNS.DataBindings.Clear();
             ClearBindingForInsert();
         }
@@ -133,7 +130,7 @@ namespace DNSChanger
             cmbAdapter_SelectedIndexChanged(cmbAdapter, null);
         }
 
-        
+
         /// <summary>
         /// Read XML file
         /// </summary>
@@ -261,7 +258,7 @@ namespace DNSChanger
         public void LoadingFunction()
         {
             LoadingForm loadingForm = new LoadingForm();
-            loadingForm.Location = new Point(Location.X + 90  , Location.Y + 90);
+            loadingForm.Location = new Point(Location.X + 90, Location.Y + 90);
             loadingForm.ShowDialog();
         }
 
@@ -331,7 +328,7 @@ namespace DNSChanger
         /// <returns></returns>
         private bool ChangeXML(ModifyMode modifyMode)
         {
-            
+
             switch (modifyMode)
             {
                 case ModifyMode.Add:
@@ -481,6 +478,11 @@ namespace DNSChanger
         }
 
         private void DNSChangerForm_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            OpenSupportURL();
+        }
+
+        public static void OpenSupportURL()
         {
             Process.Start(Resources.SupportUrl);
         }

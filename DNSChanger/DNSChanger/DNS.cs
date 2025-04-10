@@ -1,12 +1,10 @@
-﻿using System;
+﻿using DNSChanger.Properties;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
-using DNSChanger.Properties;
 
 namespace DNSChanger
 {
@@ -103,7 +101,7 @@ namespace DNSChanger
             {
                 error = e.Message;
             }
-            
+
         }
 
         /// <summary>
@@ -122,7 +120,7 @@ namespace DNSChanger
         /// <param name="dnsList">List of DNS value</param>
         private static void WriteAppendXML(List<DNS> dnsList)
         {
-            XDocument xDocument = XDocument.Load(Resources.XMLFileName);
+            XDocument xDocument = XDocument.Load(Settings.Default.DNSPath);
             XElement root = xDocument.Element(Resources.TagDNS);
 
             string errorString;
@@ -143,7 +141,7 @@ namespace DNSChanger
                         new XElement(Resources.TagAlternate, item.Alternate)));
                 }
             }
-            xDocument.Save(Resources.XMLFileName);
+            xDocument.Save(Settings.Default.DNSPath);
         }
 
         /// <summary>
@@ -155,7 +153,7 @@ namespace DNSChanger
             XmlWriterSettings settings = new XmlWriterSettings();
             settings.Indent = true;
             settings.OmitXmlDeclaration = true;
-            XmlWriter writer = XmlWriter.Create(Resources.XMLFileName, settings);
+            XmlWriter writer = XmlWriter.Create(Settings.Default.DNSPath, settings);
             writer.WriteStartElement(Resources.TagDNS);
             foreach (DNS dns in dnsList)
             {
@@ -185,7 +183,7 @@ namespace DNSChanger
         {
             try
             {
-                var xmlDocument = XDocument.Load(Resources.XMLFileName);
+                var xmlDocument = XDocument.Load(Settings.Default.DNSPath);
                 XElement item = xmlDocument.Elements(Resources.TagDNS).Elements(Resources.TagItem)
                     .SingleOrDefault(x => x.Element(Resources.TagName).Value == oldDNS.Name);
 
@@ -197,7 +195,7 @@ namespace DNSChanger
                 preferred.Value = newDNS.Preferred;
                 alternate.Value = newDNS.Alternate;
 
-                xmlDocument.Save(Resources.XMLFileName);
+                xmlDocument.Save(Settings.Default.DNSPath);
 
                 error = null;
 
@@ -206,7 +204,7 @@ namespace DNSChanger
             {
                 error = e.Message;
             }
-            
+
         }
 
         /// <summary>
@@ -218,14 +216,14 @@ namespace DNSChanger
         {
             try
             {
-                var xmlDocument = XDocument.Load(Resources.XMLFileName);
+                var xmlDocument = XDocument.Load(Settings.Default.DNSPath);
 
                 XElement item = xmlDocument.Elements(Resources.TagDNS).Elements(Resources.TagItem)
                     .SingleOrDefault(x => x.Element(Resources.TagName).Value == dns.Name);
 
                 item.Remove();
 
-                xmlDocument.Save(Resources.XMLFileName);
+                xmlDocument.Save(Settings.Default.DNSPath);
 
                 error = null;
             }
@@ -241,7 +239,7 @@ namespace DNSChanger
         /// <returns></returns>
         public static bool IsExistsXMLFile()
         {
-            return File.Exists(Resources.XMLFileName);
+            return File.Exists(Settings.Default.DNSPath);
         }
 
         /// <summary>
@@ -250,7 +248,7 @@ namespace DNSChanger
         /// <param name="dnsList">List of DNS value</param>
         public static List<DNS> ReadXMLFile(List<DNS> _dnsList, out string errore)
         {
-            XElement.Load(Resources.XMLFileName)
+            XElement.Load(Settings.Default.DNSPath)
                 .Elements(Resources.TagItem)
                 .ToList()
                 .ForEach

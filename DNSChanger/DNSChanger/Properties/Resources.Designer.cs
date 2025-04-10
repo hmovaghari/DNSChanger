@@ -286,14 +286,5 @@ namespace DNSChanger.Properties {
                 return ResourceManager.GetString("Version", resourceCulture);
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to DNS.XML.
-        /// </summary>
-        internal static string XMLFileName {
-            get {
-                return ResourceManager.GetString("XMLFileName", resourceCulture);
-            }
-        }
     }
 }

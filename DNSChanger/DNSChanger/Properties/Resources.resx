@@ -193,7 +193,4 @@
   <data name="Version" xml:space="preserve">
     <value>1.0.3</value>
   </data>
-  <data name="XMLFileName" xml:space="preserve">
-    <value>DNS.XML</value>
-  </data>
 </root>
