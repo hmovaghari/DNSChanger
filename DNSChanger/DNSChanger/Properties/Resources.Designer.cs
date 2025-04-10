@@ -279,7 +279,7 @@ namespace DNSChanger.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 1.0.3.
+        ///   Looks up a localized string similar to 1.0.4.
         /// </summary>
         internal static string Version {
             get {
