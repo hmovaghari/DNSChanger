@@ -158,7 +158,7 @@
     <value>{Resources.Version}</value>
   </data>
   <data name="SupportUrl" xml:space="preserve">
-    <value>https://hmovaghari.github.io/#contact:en</value>
+    <value>http://hmovaghari.ir/#contact</value>
   </data>
   <data name="TabChar" xml:space="preserve">
     <value>\t</value>
@@ -185,12 +185,12 @@
     <value>This adapter not connected</value>
   </data>
   <data name="UpdateUrl" xml:space="preserve">
-    <value>http://hmovaghari.github.io/root/DNSChanger/FramworkApp.Update.txt</value>
+    <value>http://hmovaghari.ir/root/DNSChanger/FramworkApp.Update.txt</value>
   </data>
   <data name="UpdateVersion" xml:space="preserve">
     <value>{UpdateVersion}</value>
   </data>
   <data name="Version" xml:space="preserve">
-    <value>1.0.4</value>
+    <value>1.0.5</value>
   </data>
 </root>

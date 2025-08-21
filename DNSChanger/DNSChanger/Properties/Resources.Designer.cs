@@ -180,7 +180,7 @@ namespace DNSChanger.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://hmovaghari.github.io/#contact:en.
+        ///   Looks up a localized string similar to http://hmovaghari.ir/#contact.
         /// </summary>
         internal static string SupportUrl {
             get {
@@ -261,7 +261,7 @@ namespace DNSChanger.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to http://hmovaghari.github.io/root/DNSChanger/FramworkApp.Update.txt.
+        ///   Looks up a localized string similar to http://hmovaghari.ir/root/DNSChanger/FramworkApp.Update.txt.
         /// </summary>
         internal static string UpdateUrl {
             get {
@@ -279,7 +279,7 @@ namespace DNSChanger.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 1.0.4.
+        ///   Looks up a localized string similar to 1.0.5.
         /// </summary>
         internal static string Version {
             get {
